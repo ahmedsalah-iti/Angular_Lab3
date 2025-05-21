@@ -1,0 +1,12 @@
+<div class="container my-5">
+    <!-- Search Component -->
+    <app-search-component (onSearchKeyword)="receiveSearchKeyword($event)"/>
+    <!-- Category Filter Component -->
+    <app-category-filter [categories]="categories"  (onSelectedCategory)="receiveSelectedCategory($event)" />
+     <!-- Product Cards Container -->
+        <div class="product-list d-flex flex-wrap justify-content-center">
+            <app-product-card (onSelectProduct)="receiveSelectedProduct($event)" [ProductsList]="filteredProductsBySearchAndCategory()" />
+        </div>
+        <!-- Product Details Offcanvas -->
+        <app-product-details [selectedProduct]="selectedProduct"></app-product-details>
+</div>

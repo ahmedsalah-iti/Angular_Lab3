@@ -1,0 +1,17 @@
+<!-- Category Filter Component -->
+<div class="category-filter mb-4 text-center">
+  @for (category of categories; track category) {
+    <button
+      type="button"
+      (click)="sendSelectedCategory(category)"
+      [ngClass]="{
+        'btn': true,
+        'btn-outline-dark': true,
+        'filter-btn': true,
+        'active': selectedCategory == category
+      }"
+    >
+      {{ category }}
+    </button>
+  }
+</div>

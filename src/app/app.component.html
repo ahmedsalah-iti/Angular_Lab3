@@ -1,6 +1,13 @@
 <!-- <app-tracks-component></app-tracks-component> -->
 <!-- <app-todo></app-todo> -->
 <!-- <app-product></app-product> -->
+ <!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
+ <body>
 <nav class="navbar navbar-expand bg-light p-3">
   <div class="container justify-content-center">
     <div class="btn-group" role="group" aria-label="Task buttons">
@@ -9,9 +16,8 @@
       }
     </div>
   </div>
+  
 </nav>
-<hr>
-{{tasks[selectedTaskId-1].selector}}
 <hr>
 
 @switch (selectedTaskId) {
@@ -22,6 +28,9 @@
 <app-todo />
 }
 @case (3) {
-<app-product />
+<app-products />
 }
 }
+
+</body>
+</html>

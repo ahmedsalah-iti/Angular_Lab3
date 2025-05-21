@@ -1,0 +1,15 @@
+<!-- Product Details Offcanvas -->
+<div class="offcanvas offcanvas-end" tabindex="-1" [id]="'productDetails'+selectedProduct.id" aria-labelledby="productDetailsLabel1">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="productDetailsLabel1">{{selectedProduct.name}} Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <p><strong>ID:</strong> {{selectedProduct.id}}</p>
+        <p><strong>Name:</strong> {{selectedProduct.name}}</p>
+        <p><strong>Category:</strong> {{selectedProduct.category}}</p>
+        <p><strong>Price:</strong> ${{selectedProduct.price}}</p>
+        <p><strong>Stock:</strong> {{selectedProduct.stock}}</p>
+        <img [src]="selectedProduct.imgUrl" class="img-fluid mb-3" [alt]="selectedProduct.name">
+    </div>
+</div>

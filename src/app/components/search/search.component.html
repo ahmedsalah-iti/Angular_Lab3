@@ -1,0 +1,7 @@
+<!-- Search Component -->
+<div class="search-container mb-4 mx-auto">
+    <div class="input-group">
+        <input (ngModelChange)="sendSearchKeyword($event)" [(ngModel)]="searchedKeyword" name="seachkeyword" type="text" class="form-control" placeholder="Search by Product Name"
+            aria-label="Search by Product Name">
+    </div>
+</div>
