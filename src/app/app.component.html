@@ -1,0 +1,27 @@
+<!-- <app-tracks-component></app-tracks-component> -->
+<!-- <app-todo></app-todo> -->
+<!-- <app-product></app-product> -->
+<nav class="navbar navbar-expand bg-light p-3">
+  <div class="container justify-content-center">
+    <div class="btn-group" role="group" aria-label="Task buttons">
+      @for (task of tasks; track task.id) {
+      <button (click)="selectedTaskId = task.id" type="button" [ngClass]='{"btn":true,"btn-outline-primary": selectedTaskId != task.id,"btn-dark": selectedTaskId == task.id}'>{{task.name}}</button>
+      }
+    </div>
+  </div>
+</nav>
+<hr>
+{{tasks[selectedTaskId-1].selector}}
+<hr>
+
+@switch (selectedTaskId) {
+@case (1) {
+<app-tracks-component />
+}
+@case (2) {
+<app-todo />
+}
+@case (3) {
+<app-product />
+}
+}

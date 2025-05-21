@@ -1,0 +1,39 @@
+<div class="container my-5">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">To-Do List</h5>
+      <span class="badge bg-light text-primary">Lab2-Task2</span>
+    </div>
+    <div class="card-body">
+      <!-- Add Task -->
+      <form class="row g-2 mb-4">
+        <div class="col-9">
+          <input type="text" name="todonameinput" class="form-control" placeholder="Enter new task" [(ngModel)]="currentTodoNameInput">
+        </div>
+        <div class="col-3">
+          <button (click)="addTodo()" type="submit" class="btn btn-success w-100">Add Task</button>
+        </div>
+      </form>
+
+      <!-- Task List -->
+      <ul class="list-group">
+        <!-- Task Item -->
+         @if (todosList.length > 0){
+
+             @for (todo of todosList; track todo.id){
+                 <li class="list-group-item d-flex justify-content-between align-items-center">
+                     <div>
+                         <span class="fw-semibold">{{ todo.name }}</span>
+                         <span class="badge bg-{{todo.status == 'completed' ? 'success' : 'warning'}} text-dark ms-2">{{todo.status}}</span>
+                        </div>
+                        <div class="btn-group">
+                            <button (click)="toggleStatus(todo.id)" [ngClass]="{'btn':true,'btn-sm':true,'btn-outline-success':todo.status == 'pending','btn-outline-warning':todo.status == 'completed'}">Mark {{ todo.status != "completed" ?  'Completed':'Pending' }}</button>
+                            <button (click)="deleteTodo(todo.id)" class="btn btn-sm btn-outline-danger">Delete</button>
+                        </div>
+                    </li>
+                }
+         }@else {<h1>There is no Todos Yet !</h1>}
+      </ul>
+    </div>
+  </div>
+</div>
